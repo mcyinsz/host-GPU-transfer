@@ -33,7 +33,7 @@ def run_benchmark():
     # 4. 计算
     total_ms = start_event.elapsed_time(end_event)
     avg_ms = total_ms / n_repeat
-    bandwidth_gb = (data_size_bytes * n_repeat) / (avg_ms / 1000.0) / (1024**3)
+    bandwidth_gb = (data_size_bytes * n_repeat) / (total_ms / 1000.0) / (1024**3)
 
     print(f"Avg Latency: {avg_ms:.4f} ms")
     print(f"Bandwidth:   {bandwidth_gb:.4f} GB/s")
